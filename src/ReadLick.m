@@ -1,4 +1,4 @@
-function [Licks, IsLicking] = ReadLick(Licks,trial,distance,alpha,Isrewarded)
+function [Licks, IsLicking] = ReadLick(Licks,trial,distance,alpha,Isrewarded,lickport)
     IsLicking = 0;
     if lickport > 0
         IsLicking = 1;
