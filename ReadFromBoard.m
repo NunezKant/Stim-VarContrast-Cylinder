@@ -6,7 +6,7 @@ fprintf(s,'thr 20'); %% sets the treshold for the lickport
 %status = strtrim(fscanf(app.s));
 fprintf(s, 'START');
 all = [];
-nn = 3000;
+nn = 1000;
 for j=1:nn
     flush(s);
     fprintf(s,'SEND')
@@ -14,7 +14,8 @@ for j=1:nn
     data = sscanf(status,'%f,',[1 4]);
     pause(1/30);
     if j>1
-        all = [all data(1,4)]
+        speed = data(1,3)/100;
+        all = [all; [speed data(1,4)]]
     end
 end
 clear s 
