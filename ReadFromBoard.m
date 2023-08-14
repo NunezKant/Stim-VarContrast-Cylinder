@@ -9,6 +9,9 @@ all = [];
 nn = 1000;
 for j=1:nn
     flush(s);
+
+
+    
     fprintf(s,'SEND')
     status = strtrim(fscanf(s));
     data = sscanf(status,'%f,',[1 4]);
