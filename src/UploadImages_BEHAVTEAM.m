@@ -1,37 +1,27 @@
-function [rwrd_img,Norwd_img,New_rwrd_img,New_nrwrd_img] = UploadImages(texturecategory)
+function [rwrd_img,Norwd_img,New_rwrd_img,New_nrwrd_img] = UploadImages_BEHAVTEAM(texturecategory)
     % [file_r,path_r] = uigetfile('../data/',{'*';'*.png';'*.jpeg'},'Select the rewarded texture');
     % [file_nr,path_nr] = uigetfile('../data/',{'*';'*.png';'*.jpeg'},'Select the NON rewarded texture');
     switch texturecategory
-        case "leavescircles"
-        rwrd_img = im2double(imread('./data/leaves_train.jpg'));
+        case "sl1"
+        rwrd_img = im2double(imread('./data/rleaves_train.jpg'));
         Norwd_img = im2double(imread('./data/circles_train.jpg'));
-        New_rwrd_img = im2double(imread('./data/leaves_test.jpg'));
+        New_rwrd_img = im2double(imread('./data/rleaves_test.jpg'));
         New_nrwrd_img = im2double(imread('./data/circles_test.jpg'));
-        case "circlesleaves"
-        rwrd_img = im2double(imread('./data/circles_train.jpg'));
-        Norwd_img = im2double(imread('./data/leaves_train.jpg'));
-        New_rwrd_img = im2double(imread('./data/circles_test.jpg'));
-        New_nrwrd_img = im2double(imread('./data/leaves_test.jpg'));
-        case "tilessquares"
+        case "sl2"
+        rwrd_img = im2double(imread('./data/leaves_train.jpg'));
+        Norwd_img = im2double(imread('./data/squares_train.jpg'));
+        New_rwrd_img = im2double(imread('./data/leaves_test.jpg'));
+        New_nrwrd_img = im2double(imread('./data/squares_test.jpg'));
+        case "sl3"
         rwrd_img = im2double(imread('./data/tiles_train.jpg'));
         Norwd_img = im2double(imread('./data/squares_train.jpg'));
         New_rwrd_img = im2double(imread('./data/tiles_test.jpg'));
         New_nrwrd_img = im2double(imread('./data/squares_test.jpg'));
-        case "squarestiles"
-        rwrd_img = im2double(imread('./data/squares_train.jpg'));
-        Norwd_img = im2double(imread('./data/tiles_train.jpg'));
-        New_rwrd_img = im2double(imread('./data/squares_test.jpg'));
-        New_nrwrd_img = im2double(imread('./data/tiles_test.jpg'));
-        case "leavestiles"
-        rwrd_img = im2double(imread('./data/leaves_train.jpg'));
-        Norwd_img = im2double(imread('./data/tiles_train.jpg'));
-        New_rwrd_img = im2double(imread('./data/leaves_test.jpg'));
-        New_nrwrd_img = im2double(imread('./data/tiles_test.jpg'));
-        case "tilesleaves"
+        case "sl4"
         rwrd_img = im2double(imread('./data/tiles_train.jpg'));
-        Norwd_img = im2double(imread('./data/leaves_train.jpg'));
+        Norwd_img = im2double(imread('./data/paved_train.jpg'));
         New_rwrd_img = im2double(imread('./data/tiles_test.jpg'));
-        New_nrwrd_img = im2double(imread('./data/leaves_test.jpg'));
+        New_nrwrd_img = im2double(imread('./data/paved_test.jpg'));
         case "gray"
         rwrd_img = im2double(imread('./data/gray.jpg'));
         Norwd_img = im2double(imread('./data/gray.jpg'));
